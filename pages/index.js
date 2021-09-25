@@ -18,6 +18,12 @@ export default function Home() {
         <Link href="/ssr">
           <a>SSR</a>
         </Link>
+        <Link href="/ssg">
+          <a>SSG</a>
+        </Link>
+        <Link href="/isr">
+          <a>ISR</a>
+        </Link>
       </main>
     </div>
   );

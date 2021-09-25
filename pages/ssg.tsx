@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from "next";
+import { GetStaticProps, NextPage } from "next";
 import { Cards } from "./components/Cards";
 
 type Props = {
@@ -6,9 +6,9 @@ type Props = {
 };
 const Ssg: NextPage<Props> = (props) => {
   const { posts } = props;
-  return <Cards posts={posts} title={"SSR"} />;
+  return <Cards posts={posts} title={"SSG"} />;
 };
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch("https://jsonplaceholder.typicode.com/posts");
   const posts = await res.json();
   return { props: { posts } };
